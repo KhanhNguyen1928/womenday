@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lời nhắn 3D — Grid & Mobile</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- NAVBAR MOBILE -->
+  <div class="navbar" id="mobileNavbar">
+    <button id="mobileMenuBtn" aria-controls="mobileMenu" aria-expanded="false">&#9776;</button>
+    <!-- optional title -->
+    <!-- <span class="menu-title">Lời nhắn 3D</span> -->
+  </div>
+
+  <!-- MOBILE MENU (IN-FLOW: nằm trước main để đẩy nội dung xuống khi mở) -->
+  <nav class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <ul>
+      <li><a href="#messageContainer">Lời nhắn</a></li>
+      <li><a href="#">Giới thiệu</a></li>
+      <li>Made by Nguyen Quoc Khanh</li>
+      <li>A gift for all the girls in the class</li>
+    </ul>
+  </nav>
+
+  <!-- SIDEBAR (desktop) -->
+  <div id="sidebar" aria-hidden="false">
+    <div class="sidebar-bar">
+      <div id="openMenu" class="toggle-btn" title="Mở menu">&#9776;</div>
+    </div>
+
+    <div class="menu">
+      <div id="closeMenu" class="close-btn" title="Đóng menu">&times;</div>
+      <h2>Menu Chính</h2>
+      <ul>
+        <li><a href="#messageContainer">Lời nhắn</a></li>
+        <li><a href="#">Giới thiệu</a></li>
+        <li> Made by Nguyen Quoc Khanh</li>
+        <li> A gift for all the girls in the class</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- MAIN -->
+  <main>
+    <!-- Column điều hướng dọc -->
+    <aside class="nav-column" aria-label="Danh sách lời chúc">
+      <h3>Danh sách lời chúc</h3>
+      <ul id="navList">
+        <li class="active" data-target="msg1">Lời nhắn 1</li>
+        <li data-target="msg2">Lời nhắn 2</li>
+        <li data-target="msg3">Lời nhắn 3</li>
+        <li data-target="msg4">Lời nhắn 4</li>
+        <li data-target="msg5">Lời nhắn 5</li>
+      </ul>
+
+      <div class="controls">
+        <button id="toggleView">Thu gọn / Mở rộng</button>
+        <button id="toggle3D">Chế độ 3D</button>
+      </div>
+    </aside>
+
+    <!-- Khu chứa lời nhắn -->
+    <section class="message-container" id="messageContainer">
+      <article class="message" id="msg1" tabindex="0">
+        <h3>Lời nhắn 1</h3>
+        <p>Chúc bạn một ngày thật tuyệt vời!</p>
+      </article>
+
+      <article class="message" id="msg2" tabindex="0">
+        <h3>Lời nhắn 2</h3>
+        <p>Hãy luôn mỉm cười và hạnh phúc nhé!</p>
+      </article>
+
+      <article class="message" id="msg3" tabindex="0">
+        <h3>Lời nhắn 3</h3>
+        <p>Niềm vui nhỏ sẽ tạo nên hạnh phúc lớn.</p>
+      </article>
+
+      <article class="message" id="msg4" tabindex="0">
+        <h3>Lời nhắn 4</h3>
+        <p>Mọi điều tốt đẹp sẽ đến với bạn.</p>
+      </article>
+
+      <article class="message" id="msg5" tabindex="0">
+        <h3>Lời nhắn 5</h3>
+        <p></p>
+      </article>
+
+      <!-- Carousel controls -->
+      <button class="carousel-btn carousel-prev" id="carouselPrev" aria-label="Previous">‹</button>
+      <button class="carousel-btn carousel-next" id="carouselNext" aria-label="Next">›</button>
+    </section>
+  </main>
+
+  <!-- Thông báo dành cho mobile -->
+  <div id="mobileNotice" class="mobile-notice" style="display:none;">
+    ⚠️ Chế độ 3D không khả dụng trên thiết bị di động.
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
