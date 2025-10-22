@@ -6,9 +6,9 @@
   <title>Lời nhắn 3D — Grid & Mobile</title>
   <link rel="stylesheet" href="style.css" />
 </head>
-<body>
+<body style="background-color: #0E0E10;">
   <!-- NAVBAR MOBILE -->
-  <div class="navbar" id="mobileNavbar">
+  <div class="navbar" id="mobileNavbar" style="background-color: #1A1A1F;">
     <button id="mobileMenuBtn" aria-controls="mobileMenu" aria-expanded="false">&#9776;</button>
     <!-- optional title -->
     <!-- <span class="menu-title">Lời nhắn 3D</span> -->
@@ -18,15 +18,17 @@
   <nav class="mobile-menu" id="mobileMenu" aria-hidden="true">
     <ul>
       <li><a href="#messageContainer">Lời nhắn</a></li>
-      <li><a href="#">Giới thiệu</a></li>
-      <li><a href="#">Process</li>
+      <li><a href="#">Trang 1</a></li>
+      <li><a href="index2.html">Trang 2</a></li>
       <li>Made by Nguyen Quoc Khanh</li>
       <li>A gift for all the girls in the class</li>
+      <li><a href="Process.html">Process</a></li>
+      <img src="0.jpg" alt="Nhac cua Vu." id="Claimimg">
     </ul>
   </nav>
 
   <!-- SIDEBAR (desktop) -->
-  <div id="sidebar" aria-hidden="false">
+  <div id="sidebar" aria-hidden="false" style="background-color: #1A1A1F;">
     <div class="sidebar-bar">
       <div id="openMenu" class="toggle-btn" title="Mở menu">&#9776;</div>
     </div>
@@ -36,10 +38,12 @@
       <h2>Menu Chính</h2>
       <ul>
         <li><a href="#messageContainer">Lời nhắn</a></li>
-        <li><a href="#">Giới thiệu</a></li>
-        <li><a href="#">Process</li>
+        <li><a href="#">Trang 1</a></li>
+        <li><a href="index2.html">Trang 2</a></li>
         <li> Made by Nguyen Quoc Khanh</li>
         <li> A gift for all the girls in the class</li>
+        <li><a href="Process.html">Process</a></li>
+        <img src="0.jpg" alt="Nhac cua Vu." id="Claimimg">
       </ul>
     </div>
   </div>
@@ -47,13 +51,13 @@
   <!-- MAIN -->
   <main>
     <!-- Column điều hướng dọc -->
-    <aside class="nav-column" aria-label="Danh sách lời chúc">
+    <aside class="nav-column" aria-label="Danh sách lời chúc" style="background-color: #1A1A1F;">
       <h3>Danh sách lời chúc</h3>
       <ul id="navList">
         <li class="active" data-target="msg1">Lời nhắn 1</li>
-        <li data-target="msg2">Lời nhắn 2</li>
         <li data-target="msg3">Lời nhắn 3</li>
         <li data-target="msg4">Lời nhắn 4</li>
+        <li data-target="msg4.5">Lời nhắn 4.5</li>
         <li data-target="msg5">Lời nhắn 5</li>
         <li data-target="msg6">Lời nhắn 6</li>
         <li data-target="msg7">Lời nhắn 7</li>
@@ -69,14 +73,42 @@
 
     <!-- Khu chứa lời nhắn -->
     <section class="message-container" id="messageContainer">
+      <div class="floating-ascii" aria-hidden="true">
+<pre>
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡤⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⠔⠒⠹⠇⣄⠌⣸⠯⡙⠢⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⢀⡤⠒⢉⣭⠐⠊⠉⣩⠴⣫⠟⣡⠞⢥⣭⡞⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢠⡏⣚⢜⠟⣡⣴⣒⣩⡴⠭⠒⠊⣡⠞⢓⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⣀⡜⡼⠓⠂⠩⡰⡄⠀⠀⠀⠀⣠⠞⢁⡴⠃⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠙⢶⢏⠀⢸⠀⢳⢳⠀⠀⢀⡜⠵⠒⠉⠀⠀⠸⣤⣄⣀⣀⣀⡀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠈⠛⢷⣼⡄⠀⣷⠀⠀⢸⠀⠀⠀⠀⠀⢠⣾⢹⣯⣳⣍⠀⠉⠉⠁⠈⠑⠶⣄⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠈⢿⡙⢦⣮⢦⣀⠘⣆⢀⣀⣠⣾⣿⣿⣧⣿⡈⠑⠯⣏⠁⠀⠐⠀⢁⡆⠍⠳⣶⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⣴⡊⡍⠙⠳⣶⣿⠿⠿⢿⣿⣸⣿⢹⣇⢹⡙⢿⣟⠛⠚⠓⠤⠄⢀⣸⡁⣀⡼⠃⠀
+⠀⠀⠀⠀⣀⢴⡞⠉⢇⣱⠋⣦⠀⠈⠙⠢⢄⡀⢳⣧⠙⣾⠛⠸⣧⠖⠹⡷⡀⠀⠀⠀⠀⣹⢿⡟⠁⠀⠀
+⠀⠀⣠⠞⢉⢺⢀⣀⡴⠃⠈⠂⠹⠦⣀⣈⢃⠱⡄⢻⣇⢿⡄⣴⠋⠀⠀⠙⢿⡀⢀⡴⠋⠁⣼⠁⠀⠀⠀
+⠀⣰⡡⠮⠓⠋⢃⡟⠀⠀⠄⠀⠀⠀⠈⠷⣿⣧⡹⠈⢿⡎⢷⣹⢠⣄⠀⠀⢠⡟⠁⠀⠀⣰⠃⠀⠀⠀⠀
+⡼⠻⣄⡠⢄⢀⠞⠀⡤⠂⠀⠀⠀⠀⠀⠀⢸⣿⡇⠀⠘⢿⡄⠙⣿⣿⣦⣦⣼⣀⣤⣠⠴⠃⠀⠀⠀⠀⠀
+⠙⠦⠴⣛⢻⠿⠐⠚⠕⠀⠀⠀⠀⠀⠀⠀⢸⡿⠀⠀⠀⠸⣿⣾⣿⡏⣼⡿⠛⣇⣿⠈⠛⠶⢤⠤⠀⠀⠀
+⠀⠀⢺⣾⠗⣀⣁⡀⠀⠀⠀⠀⠀⠀⠀⢀⡖⠃⠀⠀⠀⠀⠘⢿⣿⠁⣿⠃⠀⠘⢿⡆⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠉⠙⠳⣮⣕⠀⠀⠀⠀⣠⣴⢿⣧⡀⠀⠀⠀⠀⠀⠸⣿⢸⡏⠀⠀⠀⠈⢧⢀⡠⠴⢦⡀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠈⠓⠢⢄⣶⣴⡿⣿⠀⠈⠻⣦⡀⠀⠀⠀⠀⣿⣿⠃⠀⠀⠀⣠⠞⠁⠀⣀⡤⠽⢦⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⡿⡿⠁⠀⠉⠀⠀⠀⠈⠻⢷⣄⠀⠀⢻⣿⠀⠀⣠⠞⠁⣠⣴⡿⠛⠀⢰⡞⠀
+⠀⠀⠀⠀⠀⠈⠓⠚⠋⠉⠀⠀⠀⠀⠀⠀⠀⢀⣀⠀⠀⠙⢿⣦⣻⣿⣀⣼⣋⢀⣼⡻⠋⢀⣠⠔⠋⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⠖⠊⠉⠉⢀⣉⢽⣿⣗⡛⡏⠟⢁⣷⡭⣽⡟⠚⠉⠉⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣦⣄⡴⠶⠎⠛⠮⠋⢀⡠⣝⣷⣶⣿⣷⡀⠀⠉⠒⠤⣀⡀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⡀⠀⠀⣀⣀⠤⡺⠓⡜⢰⠋⢟⠟⠏⣟⣄⠀⠀⠀⠀⠉⠓⠢⢤⣀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠀⢀⡜⠁⠘⢀⡎⠀⠘⣆⢒⢸⡌⠙⠦⣀⡀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠎⠀⠀⢀⡞⠀⠀⠀⠘⣿⡝⢿⣦⡄⠈⠉⠒⠢⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠃⠀⠀⢠⠞⠀⠀⠀⠀⠀⠹⣷⡛⢿⣷⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠴⠃⠀⠀⡰⠋⠀⠀⠀⠀⠀⠀⠀⠹⣧⠘⣿⡄⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠜⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣷⡸⣷⡀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠛⠃⢻⡇⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠁⠀⠀⠀⠀⠀
+</pre>
+      </div>
       <article class="message" id="msg1" tabindex="0">
-        <h3>Lời nhắn 1<cho/h3>
+        <h3>Lời nhắn 1</h3>
         <p>Chúc bạn 20/10 thật vui vẻ, hạnh phúc và luôn xinh đẹp rạng ngời!(AI nó cx chỉ biết viết thế thôi)</p>
-      </article>
-
-      <article class="message" id="msg2" tabindex="0">
-        <h3>Lời nhắn 2</h3>
-        <p>Chúc mừng 20/11</p>
       </article>
 
       <article class="message" id="msg3" tabindex="0">
@@ -86,7 +118,11 @@
 
       <article class="message" id="msg4" tabindex="0">
         <h3>Lời nhắn 4</h3>
-        <p>Nhân ngày 20/10, xin gửi tới tất cả các bạn nữ lớp 12A1 lời chúc tốt đẹp và chân thành nhất. Cảm ơn các bạn vì đã mang đến cho cuộc sống này thật nhiều sắc màu, sự dịu dàng và nguồn năng lượng tích cực. Các bạn không chỉ là những bông hoa đẹp, mà còn là biểu tượng của nghị lực, sự kiên trì và lòng nhân hậu. Chúc các bạn luôn mạnh mẽ theo đuổi ước mơ, tự tin thể hiện bản thân và giữ nụ cười thật tươi dù cuộc sống có khó khăn đến đâu. Chúc ngày 20/10 của các bạn thật ý nghĩa, ngập tràn niềm vui, những đóa hoa rực rỡ và lời chúc ngọt ngào nhất! </p>
+        <p>Nhân ngày 20/10, xin gửi tới tất cả các bạn nữ lớp 12A1 lời chúc tốt đẹp và chân thành nhất. Cảm ơn các bạn vì đã mang đến cho cuộc sống này thật nhiều sắc màu, sự dịu dàng và nguồn năng lượng tích cực. </p>
+      </article>
+      <article class="message" id="msg4.5" tabindex="0">
+        <h3>Lời nhắn 4.5</h3>
+        <p>Các bạn không chỉ là những bông hoa đẹp, mà còn là biểu tượng của nghị lực, sự kiên trì và lòng nhân hậu. Chúc các bạn luôn mạnh mẽ theo đuổi ước mơ, tự tin thể hiện bản thân và giữ nụ cười thật tươi dù cuộc sống có khó khăn đến đâu. Chúc ngày 20/10 của các bạn thật ý nghĩa, ngập tràn niềm vui, những đóa hoa rực rỡ và lời chúc ngọt ngào nhất! </p>
       </article>
       <article class="message" id="msg5" tabindex="0">
         <h3>Lời nhắn 5</h3>
@@ -108,6 +144,7 @@
         <h3>Lời nhắn 9</h3>
         <p>Chúc bạn 20/10 thật rực rỡ, luôn tự tin, xinh đẹp và gặp nhiều may mắn trong học tập cũng như cuộc sống nhé!</p>
       </article>
+
       <!-- Carousel controls -->
       <button class="carousel-btn carousel-prev" id="carouselPrev" aria-label="Previous">‹</button>
       <button class="carousel-btn carousel-next" id="carouselNext" aria-label="Next">›</button>
@@ -120,10 +157,7 @@
   </div>
 
   <script src="script.js"></script>
+  <audio id="bg-music" src="bình yên _ Vũ. ft. Binz (từ Album Bảo Tàng Của Nuối Tiếc) - Vũ Official (1080p, h264).mp4" loop></audio>
+
 </body>
 </html>
-
-
-
-
-

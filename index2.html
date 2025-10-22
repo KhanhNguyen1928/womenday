@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Lời nhắn 3D — Grid & Mobile</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body style="background-color: #0E0E10;">
+  <!-- NAVBAR MOBILE -->
+  <div class="navbar" id="mobileNavbar" style="background-color: #1A1A1F;">
+    <button id="mobileMenuBtn" aria-controls="mobileMenu" aria-expanded="false">&#9776;</button>
+    <!-- optional title -->
+    <!-- <span class="menu-title">Lời nhắn 3D</span> -->
+  </div>
+
+  <!-- MOBILE MENU (IN-FLOW: nằm trước main để đẩy nội dung xuống khi mở) -->
+  <nav class="mobile-menu" id="mobileMenu" aria-hidden="true">
+    <ul>
+      <li><a href="#messageContainer">Lời nhắn</a></li>
+      <li><a href="index.html">Trang 1</a></li>
+      <li><a href="#">Trang 2</a></li>
+      <li>Made by Nguyen Quoc Khanh</li>
+      <li>A gift for all the girls in the class</li>
+      <li><a href="Process.html">Process</a></li>
+      <img src="0.jpg" alt="Nhac cua Vu." id="Claimimg">
+    </ul>
+  </nav>
+
+  <!-- SIDEBAR (desktop) -->
+  <div id="sidebar" aria-hidden="false" style="background-color: #1A1A1F;">
+    <div class="sidebar-bar">
+      <div id="openMenu" class="toggle-btn" title="Mở menu">&#9776;</div>
+    </div>
+
+    <div class="menu">
+      <div id="closeMenu" class="close-btn" title="Đóng menu">&times;</div>
+      <h2>Menu Chính</h2>
+      <ul>
+        <li><a href="#messageContainer">Lời nhắn</a></li>
+        <li><a href="index.html">Trang 1</a></li>
+        <li><a href="#">Trang 2</a></li>
+        <li> Made by Nguyen Quoc Khanh</li>
+        <li> A gift for all the girls in the class</li>
+        <li><a href="Process.html">Process</a></li>
+        <img src="0.jpg" alt="Nhac cua Vu." id="Claimimg">
+      </ul>
+    </div>
+  </div>
+
+  <!-- MAIN -->
+  <main>
+    <!-- Column điều hướng dọc -->
+    <aside class="nav-column" aria-label="Danh sách lời chúc" style="background-color: #1A1A1F;">
+      <h3>Danh sách lời chúc</h3>
+      <ul id="navList">
+        <li class="active" data-target="msg1">Lời nhắn 1</li>
+        <li data-target="msg3">Lời nhắn 2</li>
+        <li data-target="msg4">Lời nhắn 3</li>
+        <li data-target="msg4.5">Lời nhắn 4</li>
+        <li data-target="msg5">Lời nhắn 5</li>
+        <li data-target="msg6">Lời nhắn 6</li>
+        <li data-target="msg7">Lời nhắn 7</li>
+        <li data-target="msg8">Lời nhắn 8</li>
+        <li data-target="msg9">Lời nhắn 9</li>
+      </ul>
+
+      <div class="controls">
+        <button id="toggleView">Thu gọn / Mở rộng</button>
+        <button id="toggle3D">Chế độ 3D</button>
+      </div>
+    </aside>
+
+    <!-- Khu chứa lời nhắn -->
+    <section class="message-container" id="messageContainer">
+      <div class="floating-ascii" aria-hidden="true">
+<pre>
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡤⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⠔⠒⠹⠇⣄⠌⣸⠯⡙⠢⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⢀⡤⠒⢉⣭⠐⠊⠉⣩⠴⣫⠟⣡⠞⢥⣭⡞⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⢠⡏⣚⢜⠟⣡⣴⣒⣩⡴⠭⠒⠊⣡⠞⢓⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⣀⡜⡼⠓⠂⠩⡰⡄⠀⠀⠀⠀⣠⠞⢁⡴⠃⢸⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠙⢶⢏⠀⢸⠀⢳⢳⠀⠀⢀⡜⠵⠒⠉⠀⠀⠸⣤⣄⣀⣀⣀⡀⠀⠀⢀⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠈⠛⢷⣼⡄⠀⣷⠀⠀⢸⠀⠀⠀⠀⠀⢠⣾⢹⣯⣳⣍⠀⠉⠉⠁⠈⠑⠶⣄⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠈⢿⡙⢦⣮⢦⣀⠘⣆⢀⣀⣠⣾⣿⣿⣧⣿⡈⠑⠯⣏⠁⠀⠐⠀⢁⡆⠍⠳⣶⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⣴⡊⡍⠙⠳⣶⣿⠿⠿⢿⣿⣸⣿⢹⣇⢹⡙⢿⣟⠛⠚⠓⠤⠄⢀⣸⡁⣀⡼⠃⠀
+⠀⠀⠀⠀⣀⢴⡞⠉⢇⣱⠋⣦⠀⠈⠙⠢⢄⡀⢳⣧⠙⣾⠛⠸⣧⠖⠹⡷⡀⠀⠀⠀⠀⣹⢿⡟⠁⠀⠀
+⠀⠀⣠⠞⢉⢺⢀⣀⡴⠃⠈⠂⠹⠦⣀⣈⢃⠱⡄⢻⣇⢿⡄⣴⠋⠀⠀⠙⢿⡀⢀⡴⠋⠁⣼⠁⠀⠀⠀
+⠀⣰⡡⠮⠓⠋⢃⡟⠀⠀⠄⠀⠀⠀⠈⠷⣿⣧⡹⠈⢿⡎⢷⣹⢠⣄⠀⠀⢠⡟⠁⠀⠀⣰⠃⠀⠀⠀⠀
+⡼⠻⣄⡠⢄⢀⠞⠀⡤⠂⠀⠀⠀⠀⠀⠀⢸⣿⡇⠀⠘⢿⡄⠙⣿⣿⣦⣦⣼⣀⣤⣠⠴⠃⠀⠀⠀⠀⠀
+⠙⠦⠴⣛⢻⠿⠐⠚⠕⠀⠀⠀⠀⠀⠀⠀⢸⡿⠀⠀⠀⠸⣿⣾⣿⡏⣼⡿⠛⣇⣿⠈⠛⠶⢤⠤⠀⠀⠀
+⠀⠀⢺⣾⠗⣀⣁⡀⠀⠀⠀⠀⠀⠀⠀⢀⡖⠃⠀⠀⠀⠀⠘⢿⣿⠁⣿⠃⠀⠘⢿⡆⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠉⠙⠳⣮⣕⠀⠀⠀⠀⣠⣴⢿⣧⡀⠀⠀⠀⠀⠀⠸⣿⢸⡏⠀⠀⠀⠈⢧⢀⡠⠴⢦⡀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠈⠓⠢⢄⣶⣴⡿⣿⠀⠈⠻⣦⡀⠀⠀⠀⠀⣿⣿⠃⠀⠀⠀⣠⠞⠁⠀⣀⡤⠽⢦⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⣼⡿⡿⠁⠀⠉⠀⠀⠀⠈⠻⢷⣄⠀⠀⢻⣿⠀⠀⣠⠞⠁⣠⣴⡿⠛⠀⢰⡞⠀
+⠀⠀⠀⠀⠀⠈⠓⠚⠋⠉⠀⠀⠀⠀⠀⠀⠀⢀⣀⠀⠀⠙⢿⣦⣻⣿⣀⣼⣋⢀⣼⡻⠋⢀⣠⠔⠋⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⠖⠊⠉⠉⢀⣉⢽⣿⣗⡛⡏⠟⢁⣷⡭⣽⡟⠚⠉⠉⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⣦⣄⡴⠶⠎⠛⠮⠋⢀⡠⣝⣷⣶⣿⣷⡀⠀⠉⠒⠤⣀⡀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⡀⠀⠀⣀⣀⠤⡺⠓⡜⢰⠋⢟⠟⠏⣟⣄⠀⠀⠀⠀⠉⠓⠢⢤⣀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠉⠉⠀⢀⡜⠁⠘⢀⡎⠀⠘⣆⢒⢸⡌⠙⠦⣀⡀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⠎⠀⠀⢀⡞⠀⠀⠀⠘⣿⡝⢿⣦⡄⠈⠉⠒⠢⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣠⠃⠀⠀⢠⠞⠀⠀⠀⠀⠀⠹⣷⡛⢿⣷⠀⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠴⠃⠀⠀⡰⠋⠀⠀⠀⠀⠀⠀⠀⠹⣧⠘⣿⡄⠀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⠜⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠹⣷⡸⣷⡀⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠛⠃⢻⡇⠀⠀⠀⠀⠀
+⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠁⠀⠀⠀⠀⠀
+</pre>
+      </div>
+      <article class="message" id="msg1" tabindex="0">
+        <h3>Lời nhắn 1</h3>
+        <p>Chúc mừng 20/11</p>
+      </article>
+
+      <article class="message" id="msg3" tabindex="0">
+        <h3>Lời nhắn 2</h3>
+        <p>Chúc các bạn nữ 20/10 luôn vui vẻ và hạnh phúc nha
+
+20/10 vui vẻ nha - mãi mãi vui tươi như hoa</p>
+      </article>
+
+      <article class="message" id="msg4" tabindex="0">
+        <h3>Lời nhắn 3</h3>
+        <p>Gửi lời chúc tốt đẹp nhất tới tất cả các bạn nữ nhân ngày 20/10 này
+
+20/10 chúc các bạn nữ luôn vui tươi và hạnh phúc nhé
+
+Chúc các bạn nữ luôn thành công trong học tập nhen
+
+Happy happy 20/10 </p>
+      </article>
+      <article class="message" id="msg4.5" tabindex="0">
+        <h3>Lời nhắn 4</h3>
+        <p>Nhân ngày 20/10, chúc tất cả các bạn nữ trong lớp luôn vui vẻ, hạnh phúc và tỏa sáng theo cách riêng của mình. Chúc mọi người ngày càng xinh đẹp, học giỏi, làm việc gì cũng thuận lợi và đạt được những điều mình mong muốn. Hy vọng hôm nay sẽ là một ngày thật đặc biệt, đầy ắp tiếng cười và những điều bất ngờ. Dù bận rộn đến đâu cũng nhớ dành thời gian cho bản thân và tận hưởng trọn vẹn ngày của mình nhé!</p>
+      </article>
+      <article class="message" id="msg5" tabindex="0">
+        <h3>Lời nhắn 5</h3>
+        <p>chúc chị em phụ nữ 20/10 thật nhiều sức khoẻ, gặt hái được nhiều thành công trên con đường sắp tới</p>
+      </article>
+      <article class="message" id="msg6" tabindex="0">
+        <h3>Lời nhắn 6</h3>
+        <img src="image.png" alt="Hoang Cong Minh" style="width: 50%; height:65%">
+      </article>
+      <article class="message" id="msg7" tabindex="0">
+        <h3>Lời nhắn 7</h3>
+        <p>Năm cuối rồi, nhìn lại mới thấy lớp mình đã cùng nhau đi qua nhiều thật nhiều.
+Cảm ơn các bạn nữ — những người đã luôn chăm chỉ, chu đáo và là linh hồn của tập thể này.
+Mong rằng sau này, dù ở đâu, các bạn vẫn mạnh mẽ, tự tin và theo đuổi ước mơ của mình.
+12… sẽ mãi là thanh xuân, là kỷ niệm mà mình chẳng bao giờ quên. 🌹🎓</p>
+      </article>
+      <article class="message" id="msg8" tabindex="0">
+        <h3>Lời nhắn 8</h3>
+        <p>Mình không nói nhiều, nhưng thật sự sẽ rất nhớ khoảng thời gian này — những sáng đến lớp, tiếng cười, tiếng nói, ánh nắng chiếu qua ô cửa.
+Chúc các bạn nữ luôn dịu dàng, vững vàng và tỏa sáng trong hành trình sắp tới.
+Dù sau này mỗi người một nơi, mong rằng khi nhớ lại, chúng ta vẫn mỉm cười và tự hào rằng: “Tôi đã từng là một phần của tuổi 18 tuyệt đẹp ấy.” 🌷💫</p>
+      </article>
+      <article class="message" id="msg9" tabindex="0">
+        <h3>Lời nhắn 9</h3>
+        <p>Cảm ơn cậu vì hành trình 3 năm cùng mình. Mình cảm thấy rất vinh hạnh khi được học cùng cậu. Chúc cậu 20/10 vui vẻ, bình an và hạnh phúc nhé!</p>
+      </article>
+
+      <!-- Carousel controls -->
+      <button class="carousel-btn carousel-prev" id="carouselPrev" aria-label="Previous">‹</button>
+      <button class="carousel-btn carousel-next" id="carouselNext" aria-label="Next">›</button>
+    </section>
+  </main>
+
+  <!-- Thông báo dành cho mobile -->
+  <div id="mobileNotice" class="mobile-notice" style="display:none;">
+    ⚠️ Chế độ 3D không khả dụng trên thiết bị di động.
+  </div>
+
+  <script src="script.js"></script>
+  <audio id="bg-music" src="bình yên _ Vũ. ft. Binz (từ Album Bảo Tàng Của Nuối Tiếc) - Vũ Official (1080p, h264).mp4" loop></audio>
+
+</body>
+</html>

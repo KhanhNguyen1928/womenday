@@ -7,6 +7,9 @@ body {
   color: #222;
   overflow-x: hidden;
 }
+/* #Claim{
+  align-content: flex-end;
+} */
 
 /* ---------- SIDEBAR (left thin bar that expands) ---------- */
 #sidebar {
@@ -39,6 +42,7 @@ body {
 .menu ul { list-style: none; }
 .menu li { margin: 8px 0; }
 .menu a { color: #fff; text-decoration: none; }
+.menu img {width: 50%; height: 50%;}
 
 /* ---------- MAIN layout ---------- */
 main {
@@ -67,7 +71,7 @@ main {
   max-height: calc(100vh - 80px);
   overflow-y: auto;
 }
-.nav-column h3 { text-align:center; color:#6a1b9a; margin-bottom:10px; }
+.nav-column h3 { text-align:center; color:#FF4F93; margin-bottom:10px; }
 .nav-column ul { list-style:none; }
 .nav-column li {
   padding: 8px 10px;
@@ -76,16 +80,20 @@ main {
   margin-bottom: 8px;
   text-align: center;
   transition: background 0.18s, color 0.18s;
+  color: #B3B3B3;
 }
 .nav-column li.active, .nav-column li:hover {
-  background: #e9d9f8;
-  color: #4a148c;
+  background: #FF4F93;
+  color: #FFFFFF;
 }
 .nav-column .controls { margin-top: 10px; display:flex; gap:10px; flex-direction:column; }
 .nav-column .controls button {
   padding: 8px 12px; border: none; border-radius: 8px; cursor: pointer;
-  background: #9575cd; color: white; font-weight: 600;
+  background: #3D3D3D; color: FA58B6; font-weight: 600;
 }
+/* .nav-column .control:hover{
+  background-color:#FF6FAE;
+} */
 
 /* ---------- MESSAGE CONTAINER: Grid on Desktop ---------- */
 .message-container {
@@ -104,7 +112,7 @@ main {
 
 /* Each card */
 .message {
-  background: linear-gradient(180deg, #ffffff 0%, #fbfbff 100%);
+  background: linear-gradient(180deg, #ffffff 0%, #FFB6C1 100%);
   border-radius: 14px;
   padding: 20px;
   box-shadow: 0 10px 30px rgba(16,16,35,0.06);
@@ -165,7 +173,7 @@ main {
   border: none;
   font-size: 28px;
   line-height: 56px;
-  background: rgba(74,20,140,0.92);
+  background: #FF6FAE;
   color: white;
   cursor: pointer;
   z-index: 1500;
@@ -201,6 +209,9 @@ main {
 }
 /* ---------- Responsive: Mobile (dọc) ---------- */
 @media (max-width: 768px) {
+  .navbar{
+    background-color: #1A1A1F;
+  }
   /* Ẩn sidebar desktop */
   #sidebar { display: none; }
   .mobile-menu{
@@ -209,8 +220,8 @@ main {
   /* mobile-menu sits between navbar and main; initially hidden via max-height */
   .mobile-menu {
     width: 100%;
-    background: #d1c4e9;
-    color: #4a148c;
+    background: #1A1A1F;
+    color: #ffffff;
     overflow: hidden;
     max-height: 0;                    /* ẩn ban đầu */
     transition: max-height 0.36s ease, padding 0.36s ease;
@@ -219,7 +230,7 @@ main {
   }
   .mobile-menu ul { list-style: none; margin: 0; padding: 8px 12px; }
   .mobile-menu li { text-align: center; padding: 10px 6px; font-weight: 600; opacity: 0; transform: translateY(-6px); transition: opacity 0.22s ease, transform 0.22s ease; }
-  .mobile-menu a { color: #4a148c; text-decoration: none; display: block; }
+  .mobile-menu a { color: #ffffff; text-decoration: none; display: block; }
   .mobile-menu.open { max-height: 480px; padding: 10px 0; }
   .mobile-menu.open li { opacity: 1; transform: translateY(0); }
 
@@ -316,4 +327,159 @@ main {
 .message:focus {
   outline: 3px solid rgba(149,117,205,0.18);
   transform: translateY(-6px) scale(1.02);
+}
+/* ---------- FLOATING ASCII (rose) : HIỂN THỊ CHỈ KHI .message-container có class .carousel ---------- */
+
+
+/* Khi bật 3D (class 'carousel' do JS thêm vào .message-container) -> show mờ và float */
+.message-container.carousel .floating-ascii {
+  opacity: 0.4; /* mờ mờ phía sau */
+  animation: floatUpDown 6s ease-in-out infinite alternate;
+}
+
+/* nhẹ nhàng chuyển động lên xuống */
+@keyframes floatUpDown {
+  from { transform: translate(-50%, -52%); }
+  to   { transform: translate(-50%, -48%); }
+}
+
+/* đảm bảo các .message và controls nằm trên cùng */
+.message-container .message{
+  position: relative;
+}
+.message-container .carousel-prev,
+.message-container .carousel-next,
+.message-container .carousel-btn {
+  z-index: 5;
+}
+
+/* nếu trong css của bạn có .message trong carousel đặt position absolute bằng js thì z-index vẫn được áp dụng */
+/* không thay đổi các rule khác của bạn */
+
+.floating-ascii {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+  opacity: 0;
+  color: #ff7ab6;
+  font-family: monospace;
+  pointer-events: none;
+  white-space: pre;
+  text-align: center;
+  transition: opacity 360ms ease, transform 6s ease-in-out;
+  
+  /* === Thêm dòng này để điều chỉnh kích cỡ === */
+  font-size: 1.1vw; /* hoặc thử 1.5vw, 2vw nếu muốn lớn hơn */
+}
+/* #Claimimg{
+  size:4px;
+} */
+.music-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255, 192, 203, 0.6);
+  border: none;
+  color: #fff;
+  font-size: 24px;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+  transition: background 0.3s, transform 0.3s;
+  z-index: 9999;
+}
+
+.music-toggle.playing {
+  background: rgba(255, 105, 180, 0.8);
+  transform: rotate(20deg);
+}
+
+.music-toggle:hover {
+  background: rgba(255, 182, 193, 0.9);
+}
+/* ---------- DEVELOPMENT PAGE ---------- */
+.dev-page {
+  padding: 60px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: var(--bg-color, #f8f5fa);
+  min-height: 100vh;
+  backdrop-filter: blur(4px);
+}
+
+.dev-intro {
+  text-align: center;
+  margin-bottom: 40px;
+  color: #ff5da2;
+}
+
+.dev-intro h1 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.dev-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  width: 100%;
+  max-width: 1000px;
+}
+
+.dev-item {
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 20px;
+  overflow: hidden;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.dev-item:hover {
+  transform: translateY(-5px);
+}
+
+.dev-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 250px;
+}
+
+.caption {
+  padding: 15px;
+  text-align: center;
+  color: #555;
+  font-style: italic;
+}
+.returnbtn{
+  height: 10%;
+  display: flex;
+  color:#555;
+  text-align: center;
+  flex-direction: column;
+}
+.spe{
+  display: flex;
+  flex-direction: row;
+}
+.return{
+  display: block;
+  background-color: #ffffff;
+  justify-content: center;
+  height: fit-content;
+  width: fit-content;
+  padding: 6%;
+  border-radius: 8px;
+  margin: 20px;
+  box-shadow: 0 30px 60px rgba(16,16,35,0.25);
+  /* text-decoration:none; */
+  /* color: #555; */
+  text-align: center;
 }
