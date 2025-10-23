@@ -17,8 +17,9 @@
   <!-- MOBILE MENU (IN-FLOW: nằm trước main để đẩy nội dung xuống khi mở) -->
   <nav class="mobile-menu" id="mobileMenu" aria-hidden="true">
     <ul>
-      <li><a href="#messageContainer">Lời nhắn</a></li>
-      <li><a href="#">Trang 1</a></li>
+      <li><a href="#">Trang Chủ</a></li>
+      <!-- <li><a href="#messageContainer">Lời nhắn</a></li> -->
+      <li><a href="index3.html">Trang 1</a></li>
       <li><a href="index2.html">Trang 2</a></li>
       <li>Made by Nguyen Quoc Khanh</li>
       <li>A gift for all the girls in the class</li>
@@ -37,8 +38,9 @@
       <div id="closeMenu" class="close-btn" title="Đóng menu">&times;</div>
       <h2>Menu Chính</h2>
       <ul>
-        <li><a href="#messageContainer">Lời nhắn</a></li>
-        <li><a href="#">Trang 1</a></li>
+        <li><a href="#">Trang Chủ</a></li>
+        <!-- <li><a href="#messageContainer">Lời nhắn</a></li> -->
+        <li><a href="index3.html">Trang 1</a></li>
         <li><a href="index2.html">Trang 2</a></li>
         <li> Made by Nguyen Quoc Khanh</li>
         <li> A gift for all the girls in the class</li>
@@ -47,11 +49,13 @@
       </ul>
     </div>
   </div>
-
+  <script>
+    alert("🌹 Bấm vào menu để xem thêm nhaa!");
+  </script>
   <!-- MAIN -->
   <main>
     <!-- Column điều hướng dọc -->
-    <aside class="nav-column" aria-label="Danh sách lời chúc" style="background-color: #1A1A1F;">
+    <!-- <aside class="nav-column" aria-label="Danh sách lời chúc" style="background-color: #1A1A1F;">
       <h3>Danh sách lời chúc</h3>
       <ul id="navList">
         <li class="active" data-target="msg1">Lời nhắn 1</li>
@@ -69,11 +73,10 @@
         <button id="toggleView">Thu gọn / Mở rộng</button>
         <button id="toggle3D">Chế độ 3D</button>
       </div>
-    </aside>
+    </aside> -->
 
     <!-- Khu chứa lời nhắn -->
-    <section class="message-container" id="messageContainer">
-      <div class="floating-ascii" aria-hidden="true">
+<div class="floating-ascii" aria-hidden="true" style="opacity:1; animation: floatUpDown 6s ease-in-out infinite alternate;">
 <pre>
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡤⠄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⡠⠔⠒⠹⠇⣄⠌⣸⠯⡙⠢⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -106,7 +109,11 @@
 ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠁⠀⠀⠀⠀⠀
 </pre>
       </div>
-      <article class="message" id="msg1" tabindex="0">
+    <section class="message-container" id="messageContainer">
+      
+      </section>
+    <!-- <h1>Bấm menu để xem thêm nội dung nhaa !</h1> -->
+      <!-- <article class="message" id="msg1" tabindex="0">
         <h3>Lời nhắn 1</h3>
         <p>Chúc bạn 20/10 thật vui vẻ, hạnh phúc và luôn xinh đẹp rạng ngời!(AI nó cx chỉ biết viết thế thôi)</p>
       </article>
@@ -145,10 +152,10 @@
         <p>Chúc bạn 20/10 thật rực rỡ, luôn tự tin, xinh đẹp và gặp nhiều may mắn trong học tập cũng như cuộc sống nhé!</p>
       </article>
 
-      <!-- Carousel controls -->
-      <button class="carousel-btn carousel-prev" id="carouselPrev" aria-label="Previous">‹</button>
-      <button class="carousel-btn carousel-next" id="carouselNext" aria-label="Next">›</button>
-    </section>
+      Carousel controls -->
+      <!-- <button class="carousel-btn carousel-prev" id="carouselPrev" aria-label="Previous">‹</button>
+      <button class="carousel-btn carousel-next" id="carouselNext" aria-label="Next">›</button> --> -->
+    <!-- </section> -->
   </main>
 
   <!-- Thông báo dành cho mobile -->
@@ -157,7 +164,17 @@
   </div>
 
   <script src="script.js"></script>
-  <audio id="bg-music" src="bình yên _ Vũ. ft. Binz (từ Album Bảo Tàng Của Nuối Tiếc) - Vũ Official (1080p, h264).mp4" loop></audio>
+  <audio id="bg-music" src="bình yên _ Vũ. ft. Binz (từ Album Bảo Tàng Của Nuối Tiếc) - Vũ Official (1080p, h264).mp4" autoplay loop></audio>
+  <!-- Ô nhập code và playlist -->
+  <div id="music-secret">
+    <input type="password" id="secretCode" placeholder="???" />
+    <button id="checkCode">OK</button>
+    <div id="playlist" style="display:none;">
+      <h4>Layover - V</h4>
+      <ul id="playlistList"></ul>
+    </div>
+  </div>
+
 
 </body>
 </html>

@@ -1,5 +1,6 @@
 // updated script.js — carousel with wrap-around (infinite loop)
 // ---------- Elements ----------
+
 const sidebar = document.getElementById('sidebar');
 const openMenu = document.getElementById('openMenu');
 const closeMenu = document.getElementById('closeMenu');
@@ -439,4 +440,98 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!isPlaying) startMusic();
     window.removeEventListener("click", autoPlayOnce);
   });
+});
+document.addEventListener("DOMContentLoaded", () => {
+  const music = document.getElementById("bg-music");
+  const musicBtn = document.createElement("button");
+
+  // --- Tạo nút bật/tắt nhạc ---
+  musicBtn.innerHTML = "♪";
+  musicBtn.className = "music-toggle";
+  document.body.appendChild(musicBtn);
+
+  let isPlaying = false;
+
+  const startMusic = () => {
+    if (!music) return;
+    music.volume = 0.25; // âm lượng nhẹ
+    music.play().catch(() => {}); // tránh lỗi autoplay
+    isPlaying = true;
+    musicBtn.classList.add("playing");
+  };
+
+  const stopMusic = () => {
+    if (!music) return;
+    music.pause();
+    isPlaying = false;
+    musicBtn.classList.remove("playing");
+  };
+
+  // Nhấn nút để bật/tắt
+  musicBtn.addEventListener("click", () => {
+    if (isPlaying) stopMusic();
+    else startMusic();
+  });
+
+  // Khi người dùng tương tác lần đầu (click hoặc chạm) → tự bật nhạc
+  window.addEventListener("click", function autoPlayOnce() {
+    if (!isPlaying) startMusic();
+    window.removeEventListener("click", autoPlayOnce);
+  });
+
+  // ====== PLAYLIST BÍ MẬT (đặt ở đây để DOM đã có phần tử) ======
+  const secretCodeInput = document.getElementById('secretCode');
+  const checkCodeBtn = document.getElementById('checkCode');
+  const playlistDiv = document.getElementById('playlist');
+  const playlistList = document.getElementById('playlistList');
+  const bgMusic = document.getElementById('bg-music'); // same as music
+
+  // bảo đảm các phần tử tồn tại
+  if (!secretCodeInput || !checkCodeBtn || !playlistDiv || !playlistList || !bgMusic) {
+    // console.warn giúp debug nếu cần
+    console.warn('Playlist elements missing:', { secretCodeInput, checkCodeBtn, playlistDiv, playlistList, bgMusic });
+    return;
+  }
+
+  const playlist = [
+    { title: "1️⃣ Blue", src: "/audio/Blue.mp3" },
+    { title: "2️⃣ For Us", src: "/audio/For Us.mp3" },
+    { title: "3️⃣ Love me Again", src: "/audio/Love me Again.mp3" },
+    { title: "4️⃣ Rainy Day", src:"/audio/rainyday.mp3" },
+    { title: "5️⃣ Slow Dancing(Pi ver)", src:"/audio/Slow Dancing(Pi ver).mp3" }
+  ];
+
+  function renderPlaylist() {
+    playlistList.innerHTML = "";
+    playlist.forEach((song, index) => {
+      const li = document.createElement('li');
+      li.textContent = song.title;
+      li.style.cursor = 'pointer';
+      li.addEventListener('click', () => {
+        document.querySelectorAll('#playlistList li').forEach(x => x.classList.remove('active'));
+        li.classList.add('active');
+        bgMusic.src = song.src;
+        // reload before play to ensure browser picks up new src
+        bgMusic.load();
+        bgMusic.play().catch(() => {});
+      });
+      if (index === 0) li.classList.add('active');
+      playlistList.appendChild(li);
+    });
+  }
+
+  checkCodeBtn.addEventListener('click', () => {
+    const code = secretCodeInput.value.trim();
+    if (code === "Khanhlinh") {
+      playlistDiv.style.display = "block";
+      renderPlaylist();
+      // đổi nhạc hiện đang chơi về bài đầu trong playlist
+      bgMusic.src = playlist[0].src;
+      bgMusic.load();
+      bgMusic.play().catch(() => {});
+    } else {
+      alert("Sai mã bí mật rồi 😜");
+    }
+  });
+  // ================================================================
 });
